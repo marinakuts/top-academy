@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- ---------------Задание1 Заменить текст-------------------------- -->
+
+    <div>
+        <h1 id="head">WWW</h1>
+        <p class="text">WWW-это аббревиатура, которая означает world
+        wide web</p>
+    </div>
+
+<!-- //---------------Задание2 Создать массив из href ссылок-------------------------- -->
+
+    <div>
+        <a href="https://ya.ru/">YA </a>
+        <a href="https://vk.ru/">VK </a>
+        <a href="https://instagram.com/">insta</a>
+    </div>
+
+<!-- //---------------Задание3 В элемент с id="result" вывести ip-адрес последнего ПК-------------------------- -->
+<!-- ---------------------------------------НЕ ПОЛУЧИЛОСЬ----------------------------------- -->
+
+    <section id="ip">
+        <li>145.114.12.1</li>
+        <li>145.114.12.2</li>
+        <li>145.114.12.3</li>
+    </section>
+    <h3> ip с наибольшим последним числом</h3>
+    <h4 id="result"></h4>
+
+<script>
+//---------------Задание1 Заменить текст--------------------------
+
+    const head = document.getElementById('head');
+    console.log(head.textContent);
+    head.textContent = 'DOM';
+
+    const text = document.querySelector('.text');
+    console.log(text);
+    text.textContent = 'DOM — это специальная древовидная структура, которая позволяет управлять HTML-разметкой из JavaScript-кода'
+
+//---------------Задание2 Создать массив из href ссылок--------------------------
+
+    const list = document.querySelectorAll('div a');
+    console.log(list);
+    let arraySocial = [];
+    list.forEach(element => {
+        arraySocial.push(element.textContent)
+    })
+    console.log(arraySocial);
+
+//---------------Задание3 В элемент с id="result" вывести ip-адрес последнего ПК--------------------------
+//-----------------НЕ ПОЛУЧИЛОСЬ-----------------------------------
+
+    // const link = document.querySelectorAll('li');
+    // let arrLink = [];
+    // link.forEach(element => {
+    //     arrLink.push(element.textContent)
+    // })
+    // console.log(arrLink);
+
+    // const result = document.getElementById('result');
+    // result.textContent = '145.114.12.3';
+
+</script>
+</body>
+</html>
