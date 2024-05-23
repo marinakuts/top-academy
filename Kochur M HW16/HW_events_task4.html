@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      margin: 10px auto;
+      width: 470px;
+    }
+
+    h3 {
+      margin: 0;
+      padding-bottom: 0.3em;
+      padding-right: 20px;
+      font-size: 1.1em;
+    }
+
+    p {
+      margin: 0;
+      padding: 0 0 0.5em;
+    }
+
+    .pane {
+      background: #edf5e1;
+      padding: 10px 20px 10px;
+      border-top: solid 2px #c4df9b;
+      position: relative;
+    }
+
+    .remove-button {
+      position: absolute;
+      font-size: 110%;
+      top: 0;
+      color: darkred;
+      right: 10px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <!-- Задание 4 -  с помощью js реализуете создание и добавление статьи (элемент div.pane)  в секцию (элемент  #section).При клике на кнопку (button.remove-button) происходит удаление статьи (div.pane) через remove() -->
+
+    <section id="section"> </section>   
+
+    <script>
+      let divBlock = document.createElement('div');
+      divBlock.className = "pane";
+
+      let head = document.createElement('h3');
+      head.textContent = "Лошадь";
+
+      let descr = document.createElement('p');
+      descr.textContent = "Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского."
+
+      let btn = document.createElement('button');
+      btn.className = "remove-button";
+      btn.textContent = "[x]";
+
+      section.append(divBlock);
+      divBlock.appendChild(btn);
+      divBlock.insertBefore(descr,btn);
+      divBlock.insertBefore(head,descr);
+          
+      btn.addEventListener('click',function () {
+            let par = btn.parentElement;
+            par.remove();
+          });
+  
+      
+    </script>
+</body>
+</html>
