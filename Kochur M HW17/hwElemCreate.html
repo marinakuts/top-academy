@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root {
+            width: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+        .seasonCard {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% / 3);
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgb(227, 130, 46);
+
+        }
+
+        .img {
+            max-width: 100%;
+            height: 150px;
+
+
+        }
+
+        .header {
+            margin-top: 5px;
+
+            font-weight: 600;
+        }
+
+        .price {
+            margin-bottom: 10px;
+        }
+
+        .price::after {
+            content: ' \20BD';
+        }
+
+        .btn {
+            margin-bottom: 10px;
+            width: 90%;
+            height: 35px;
+            border-radius: 8px;
+            border: none;
+            background-color: blanchedalmond;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    const products = [
+        {
+            'id': '1',
+            'title': 'Картина Осень',
+            'src': 'image/antonio-vivaldi-osen-3-1.webp',
+            'price': '235'
+        }, {
+            'id': '2',
+            'title': 'Картина Лето',
+            'src': 'image/summer.jpeg',
+            'price': '356'
+        }, {
+            'id': '3',
+            'title': 'Картина Зима',
+            'src': 'image/solntse-zimoi-2-1.webp',
+            'price': '574'
+        }, {
+            'id': '4',
+            'title': 'Картина Весна',
+            'src': 'image/vesna-i-osen-1.webp',
+            'price': '456'
+        }, 
+    ]
+
+    const showSeason = function (item) {
+
+    const article = document.createElement('article');
+    article.className = 'seasonCard';
+
+    //title
+    const elem2 = document.createElement('div');
+    elem2.textContent = item.title;
+    elem2.className = 'header';
+
+    //src
+    const elem3 = document.createElement('img');
+    elem3.src = item.src;
+    elem3.className = 'img';
+
+    //price
+    const elem4 = document.createElement('div');
+    elem4.textContent = item.price;
+    elem4.className = 'price';
+
+    //btn
+    const elem5 = document.createElement('button');
+    elem5.textContent = 'Купить';
+    elem5.className = 'btn';
+
+    article.append(elem3, elem2, elem4, elem5);
+    root.append(article);
+
+}
+
+products.forEach(item=>showSeason(item));
+</script>
+</html>
